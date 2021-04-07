@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # new 
+
 
     # Third-party
     'crispy_forms', # New
+    'allauth',
+    'allauth.account',
 
     # Local 
     'users',
@@ -143,3 +147,14 @@ LOGOUT_REDIRECT_URL = 'home' # New
 
 # Django crispy forms 
 CRISPY_TEMPLTE_PACK = 'bootstrap4' # New 
+
+
+# django-allauth config
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT = 'home' # new
+SITE_ID = 1 # new
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend', # new
+)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
