@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Local 
     'users',
     'pages', # New 
+    'books', # new 
     
 ]
 
